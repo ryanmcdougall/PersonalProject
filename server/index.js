@@ -1,4 +1,5 @@
 require('dotenv').config()
+const ctrl = require('./controller')
 const express = require("express"),
   session = require("express-session"),
   passport = require("passport"),
@@ -82,6 +83,10 @@ app.get('/auth/user', (req,res) => {
       res.status(401).send('Nice try')
     }
   })
+
+app.get('/product/pumps', ctrl.showPumps)
+app.get('/product/hose', ctrl.showHose)
+app.get('/product/attachments', ctrl.showAttachments)
 
 app.listen(SERVER_PORT, () => {
     console.log(`Listening on port: `, SERVER_PORT);

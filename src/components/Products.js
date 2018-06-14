@@ -9,13 +9,13 @@ export default class Products extends Component{
                 <br />
                 <div>
                     <Link to='/Item/pumps'>
-                    Pumps
+                    <button>Pumps</button>
                     </Link>
                     <Link to='/Item/hose'>
-                    Hose
+                    <button>Hose</button>
                     </Link>
                     <Link to='Item/attachments'>
-                    Attachments
+                    <button>Attachments</button>
                     </Link>
                     <br />
                     <Link to='/Cart'>

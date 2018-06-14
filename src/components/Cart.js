@@ -8,6 +8,11 @@ class Cart extends Component {
             cartItems: []
         }
     }
+
+    componentDidMount(){
+        
+    }
+
     render(){
         console.log(this.state.cartItems)
         return(

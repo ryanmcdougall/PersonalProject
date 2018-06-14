@@ -10,12 +10,15 @@ export default function NavBar(){
             <Link to='/Products'>
                 <p>Products</p>
             </Link>
+            <Link to='/Cart'>
+                <p>Cart</p>
+            </Link>
             <a href={process.env.REACT_APP_LOGIN}>
                         <button>Login</button>
             </a>
             <a href="http://localhost:3005/auth/logout">
                 <button type="" className="">
-                    logout
+                    Logout
                 </button>
             </a>
         </div>
