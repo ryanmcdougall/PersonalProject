@@ -9,6 +9,7 @@ export default class Item extends Component {
         this.state = {
             products: []
         }
+        this.pushToCart = this.pushToCart.bind(this)
     }
 
     componentDidMount(){
@@ -19,6 +20,10 @@ export default class Item extends Component {
         })
     }
 
+    pushToCart(id){
+        axios.post("/product/cart").then()
+    }
+
     render(){
         console.log('props:', this.props)
         console.log('state:', this.state.products)
@@ -27,7 +32,7 @@ export default class Item extends Component {
                 <div key={products.id}>
                     <img src={products.img} alt='' width="200" />
                     <p>{products.name}</p>
-                    
+                    <button onClick={() => this.pushToCart(products.id)}>Add item to Cart</button>
                 </div>
             )
         })
@@ -35,8 +40,9 @@ export default class Item extends Component {
             <div>
                 <p>List of: {this.props.match.params.item} </p>
                 {mapped}
+                <br />
                 <Link to='/Products'>
-                <button>Add to Cart</button>
+                <button>Back to Products</button>
                 </Link>
             </div>
         )

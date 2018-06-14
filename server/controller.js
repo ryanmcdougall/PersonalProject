@@ -18,5 +18,11 @@ module.exports = {
         db.show_attachments().then( attachments => {
             res.status(200).send(attachments)
         })
+    },
+    postToCart: ( req, res ) => {
+        const db = req.app.get('db');
+        db.post_cart().then( cart => {
+            res.status(200).send(cart)
+        })
     }
 }

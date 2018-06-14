@@ -87,6 +87,7 @@ app.get('/auth/user', (req,res) => {
 app.get('/product/pumps', ctrl.showPumps)
 app.get('/product/hose', ctrl.showHose)
 app.get('/product/attachments', ctrl.showAttachments)
+app.post('/product/cart', ctrl.postToCart)
 
 app.listen(SERVER_PORT, () => {
     console.log(`Listening on port: `, SERVER_PORT);
