@@ -1,5 +1,5 @@
 const initialState = {
-    cartItems: []
+    cart: []
 }
 
 const UPDATE_CART_DATA = "UPDATE_CART_DATA"

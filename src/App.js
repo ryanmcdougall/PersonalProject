@@ -4,6 +4,7 @@ import NavBar from './components/NavBar'
 import Home from './components/Home'
 import Products from './components/Products'
 import Item from './components/Item';
+import Cart from './components/Cart'
 import './App.css';
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
               <Route component={Home} path='/' exact />
               <Route component={Products} path='/Products' />
               <Route component={Item} path='/Item/:item' />
+              <Route component={Cart} path='/Cart' />
             </Switch>
           </HashRouter>
       </div>
