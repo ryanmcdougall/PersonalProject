@@ -21,7 +21,7 @@ export default class Item extends Component {
     }
 
     pushToCart(id){
-        axios.post("/product/cart").then()
+        axios.post("/product/cart", {productId: id}).then()
     }
 
     render(){
@@ -32,6 +32,7 @@ export default class Item extends Component {
                 <div key={products.id}>
                     <img src={products.img} alt='' width="200" />
                     <p>{products.name}</p>
+                    {console.log(this.state.products)} 
                     <button onClick={() => this.pushToCart(products.id)}>Add item to Cart</button>
                 </div>
             )

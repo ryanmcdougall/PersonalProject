@@ -1,2 +1,2 @@
-insert into Cart (userid, productid)
+insert into cart (userid, productid)
 values ($1, $2)

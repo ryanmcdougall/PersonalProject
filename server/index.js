@@ -4,7 +4,8 @@ const express = require("express"),
   session = require("express-session"),
   passport = require("passport"),
   Auth0Strategy = require("passport-auth0"),
-  massive = require("massive");
+  massive = require("massive"),
+  bodyParser = require('body-parser');
 
   const {
     SERVER_PORT,
@@ -17,6 +18,7 @@ const express = require("express"),
   } = process.env;
 
   const app = express();
+  app.use(bodyParser.json());
 
   massive(CONNECTION_STRING).then(db => {
       app.set("db", db);
@@ -87,6 +89,7 @@ app.get('/auth/user', (req,res) => {
 app.get('/product/pumps', ctrl.showPumps)
 app.get('/product/hose', ctrl.showHose)
 app.get('/product/attachments', ctrl.showAttachments)
+app.get('/product/cart', ctrl.getCartItems)
 app.post('/product/cart', ctrl.postToCart)
 
 app.listen(SERVER_PORT, () => {

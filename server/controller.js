@@ -19,10 +19,17 @@ module.exports = {
             res.status(200).send(attachments)
         })
     },
+    getCartItems: ( req, res ) => {
+        const db = req.app.get("db");
+        db.show_cart().then( cart => {
+            res.status(200).send(cart)
+        })
+    },
     postToCart: ( req, res ) => {
         const db = req.app.get('db');
-        db.post_cart().then( cart => {
+        console.log(req.body)
+        db.post_cart([ req.user.id, req.body.productId ]).then( cart => {
             res.status(200).send(cart)
         })
     }
-}
+} 
