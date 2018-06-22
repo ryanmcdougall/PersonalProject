@@ -2,21 +2,32 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
 import {actionCartChange} from '../ducks/reducer'
+import {actionDeleteCart} from '../ducks/reducer'
+
 
 class Cart extends Component {
 componentDidMount(){
-    axios.get('/product/cart').then( res => {
+    axios.get('/product/userCart').then( res => {
         this.props.actionCartChange(res.data)
     })
 }
 
-
-
     render(){
-        console.log(this.props.cart)
+        let mappedCart = this.props.cart.map( (products, i) => {
+            console.log("the cart:", this.props.cart)
+            return (
+                <div key={i}>
+                <img src={products.img} alt='' width='100'/>
+                <p>{products.name}</p>
+                <p>${products.price} per day</p>
+                <button onClick={() => this.props.actionDeleteCart(products.id)}>X</button>
+                </div>
+
+            );
+        });
         return(
             <div>
-                {this.props.cart}
+                {mappedCart}
             </div>
         )
     }
@@ -24,8 +35,8 @@ componentDidMount(){
 
 function mapStateToProps(state){
     return{
-        state
+       cart: state.cart
     }
 }
 
-export default connect(mapStateToProps, {actionCartChange})(Cart)
+export default connect(mapStateToProps, {actionCartChange, actionDeleteCart})(Cart)

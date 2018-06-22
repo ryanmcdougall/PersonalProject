@@ -90,7 +90,9 @@ app.get('/product/pumps', ctrl.showPumps)
 app.get('/product/hose', ctrl.showHose)
 app.get('/product/attachments', ctrl.showAttachments)
 app.get('/product/cart', ctrl.getCartItems)
+app.get('/product/userCart', ctrl.getUserCart)
 app.post('/product/cart', ctrl.postToCart)
+app.delete('/product/cart', ctrl.deleteFromCart)
 
 app.listen(SERVER_PORT, () => {
     console.log(`Listening on port: `, SERVER_PORT);
