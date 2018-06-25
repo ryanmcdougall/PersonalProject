@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  color:whitesmoke
+}
+
+.NavBar {
+  background-color: white
 }
 
 .homePic {

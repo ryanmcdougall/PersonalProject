@@ -25,25 +25,27 @@ module.exports = {
             res.status(200).send(cart)
         })
     },
-    getUserCart( req, res ){
+    getUserCart: ( req, res ) => {
         const db = req.app.get("db");
-        console.log("working user:", req.user)
-        db.get_user_cart( req.user.id ).then( userCart => {
+        db.get_user_cart(req.user.id).then( userCart => {
             res.status(200).send( userCart )
+        })
+    },
+    getPrices: ( req, res ) => {
+        const db = req.app.get("db");
+        db.get_prices(req.user.id).then( prices => {
+            res.status(200).send( prices )
         })
     },
     postToCart: ( req, res ) => {
         const db = req.app.get('db');
-        console.log(req.body)
         db.post_cart([ req.user.id, req.body.productId ]).then( cart => {
             res.status(200).send(cart)
         })
     },
     deleteFromCart: ( req, res ) => {
         const db = req.app.get("db");
-        console.log('req.query:', req.query)
-        console.log("user in delete:", req.user)
-        db.delete_from_cart([req.query.id, req.user.id]).then( updatedCart => {
+        db.delete_from_cart([req.params.id, req.user.id]).then( updatedCart => {
             res.status(200).send(updatedCart)
         })
     }

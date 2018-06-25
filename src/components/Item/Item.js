@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import './Item.css'
 
 export default class Item extends Component {
     constructor(){
@@ -38,7 +39,7 @@ export default class Item extends Component {
             )
         })
         return(
-            <div>
+            <div className="Items">
                 <p>List of: {this.props.match.params.item} </p>
                 {mapped}
                 <br />

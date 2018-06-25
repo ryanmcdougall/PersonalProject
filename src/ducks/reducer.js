@@ -1,11 +1,14 @@
 import axios from "axios";
 
 const initialState = {
-    cart: []
+    cart: [],
+    prices: [],
+    total: 0
 }
 
 const UPDATE_CART_DATA = "UPDATE_CART_DATA"
 const DELETE_ITEM_CART = "DELETE_ITEM_CART"
+const GET_ITEM_PRICES = "GET_ITEM_PRICES"
 
 export default function reducer(state = initialState, action){
     let { payload } = action;
@@ -15,7 +18,9 @@ export default function reducer(state = initialState, action){
             return Object.assign({}, state, {cart: payload})
         case DELETE_ITEM_CART:
             return Object.assign({}, state, {cart: payload})
-
+        case GET_ITEM_PRICES:
+            return Object.assign({}, state, {prices: payload});
+        
         default:
             return state
     }
@@ -28,18 +33,26 @@ export function actionCartChange(items){
     }
 }
 
-// issue with front end neediong to be refreshed in prder to show item that was selected to be deleted 
+export function getPrices(){
+    let prices = axios.get('/product/prices').then( res => {
+        return res.data;
+        })
+    return{
+        type: GET_ITEM_PRICES,
+        payload: prices
+    }
+}
 
+export function getTotal(total){
+    return{
 
-export function actionDeleteCart(id){
-    console.log("we got here :)")
-    let updatedCart = axios.delete(`/product/cart?id=${id}`).then( res => {
-            console.log("res.data:", res.data)
-            return res.data
-        }
-    )
+    }
+}
+
+export function actionDeleteCart(newCart){
+    console.log("we got here")
     return{
         type: DELETE_ITEM_CART,
-        payload: updatedCart
+        payload: newCart
     }
 }

@@ -1,0 +1,25 @@
+.container {
+    background-color: white;
+    width:90%;
+    margin: 0 auto
+}
+
+.Logo {
+    float: left;
+    width: 25%;
+}
+
+.nav {
+    float: right;
+}
+
+.List {
+    margin: 0;
+    padding: 0;
+    list-style-type: none
+}
+
+.LineItem {
+    display: inline-block;
+    margin-left: 10%
+}
