@@ -2,12 +2,18 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
 import StripeCheckout from 'react-stripe-checkout';
+import CartItem from '../CartItem/CartItem'
 import {actionCartChange} from '../../ducks/reducer'
 import {actionDeleteCart} from '../../ducks/reducer'
 import './Cart.css'
 
 
 class Cart extends Component {
+    constructor(){
+        super();
+
+        this.deleteItem = this.deleteItem.bind( this )
+    }
 componentDidMount(){
     axios.get('/product/userCart').then( res => {
         this.props.actionCartChange(res.data)
@@ -18,6 +24,12 @@ deleteItem(id){
     axios.delete(`/product/cart/${id}`).then( res => {
         this.props.actionDeleteCart(res.data)
     })
+}
+
+adjustQuantity(e, id){
+    this.setState({ itemAmount: e.target.value }, () => {
+        axios.put(`/product/cart/${id}`, {amount: +this.state.itemAmount}).then()
+    })    
 }
 
 onToken = (token) => {
@@ -31,22 +43,25 @@ onToken = (token) => {
     });
   }
  
+//create cartItem component to have its own state return the div below 
+
     render(){
+        console.log(this.props.cart)
         let cart = Array.from(this.props.cart);
         let mappedCart = cart.map( (products, i) => {
             return (
-                <div key={i}>
-                <img src={products.img} alt='' width='100'/>
-                <p>{products.name}</p>
-                <p>${products.price} per day</p>
-                <button onClick={() => this.deleteItem(products.id)}>X</button>
-                </div>
-
+                <CartItem 
+                    image={products.img} 
+                    name={products.name} 
+                    price={products.price}
+                    id={products.id}
+                    key={i}
+                    delete={this.deleteItem}
+                    />
             );
         });
-        let total = this.props.cart.reduce((a,b) => a + b.price, 0)
+        let total = this.props.cart.reduce((a,b) => a + (b.price * b.amount), 0)
         console.log(total)
-
         return(
             <div className="Cart">
                 {mappedCart}
@@ -61,11 +76,8 @@ onToken = (token) => {
 
 function mapStateToProps(state){
     console.log("cart:", state.cart)
-    console.log("total:", state.total)
     return{
        cart: state.cart,
-       prices: state.prices,
-       total: state.total
     }
 }
 

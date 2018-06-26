@@ -43,9 +43,16 @@ module.exports = {
             res.status(200).send(cart)
         })
     },
+    editAmount: ( req, res ) => {
+        const db = req.app.get("db");
+        console.log(+req.params.id, req.body.amount, +req.user.id)
+        db.edit_amount([ req.body.amount, +req.params.id, req.user.id ]).then( update => {
+            res.status(200).send( update )
+        })
+    },
     deleteFromCart: ( req, res ) => {
         const db = req.app.get("db");
-        db.delete_from_cart([req.params.id, req.user.id]).then( updatedCart => {
+        db.delete_from_cart([+req.params.id, req.user.id]).then( updatedCart => {
             res.status(200).send(updatedCart)
         })
     }
