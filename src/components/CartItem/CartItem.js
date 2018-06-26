@@ -1,24 +1,45 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux'
+import { actionCartChange } from '../../ducks/reducer'
 
 
 class CartItem extends Component {
+    constructor(){
+        super();
 
-    adjustQuantity(e, id){
-        axios.put(`/product/cart/${id}`, {amount: +e.target.value}).then()
+        this.state = {
+            amount: 1
+        }
+        this.adjustQuantity = this.adjustQuantity.bind(this)
+    }
+    componentDidMount(){
+        this.setState({amount: this.props.amount});
 
     }
 
+    adjustQuantity(e){
+        this.setState({amount: +e.target.value})
+        axios.put(`/product/cart/${this.props.id}`, {amount: this.state.amount}).then( res => {
+            this.props.actionCartChange( res.data )
+        })
+    }
+
     render(){
-        console.log("cart as props:", this.props.cart)
+        console.log("amount:", this.state.amount)
         return(
             <div key={this.props.i}>
                 <img src={this.props.image} alt='' width='100'/>
                 <p>{this.props.name}</p>
                 <p>${this.props.price} per day</p>
-                <input type="number" value={this.props.cart.amount} onChange={(e) => this.adjustQuantity(e, this.props.id)}/>
-                <button onClick={() => this.props.delete(this.props.id)}>X</button>
+                <input 
+                    type="number" 
+                    value={this.state.amount} 
+                    onChange={(e) => this.adjustQuantity(e)}/>
+                <button onClick={() => {
+                        this.props.delete(this.props.id)
+                    }
+                }>X</button>
                 </div>
         )
     }
@@ -31,4 +52,4 @@ function mapStateToProps(state){
 }
 
 
-export default connect(mapStateToProps)(CartItem)
+export default connect(mapStateToProps, { actionCartChange })(CartItem)

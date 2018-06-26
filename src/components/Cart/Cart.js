@@ -26,12 +26,6 @@ deleteItem(id){
     })
 }
 
-adjustQuantity(e, id){
-    this.setState({ itemAmount: e.target.value }, () => {
-        axios.put(`/product/cart/${id}`, {amount: +this.state.itemAmount}).then()
-    })    
-}
-
 onToken = (token) => {
     fetch('/save-stripe-token', {
       method: 'POST',
@@ -43,21 +37,21 @@ onToken = (token) => {
     });
   }
  
-//create cartItem component to have its own state return the div below 
 
     render(){
         console.log(this.props.cart)
         let cart = Array.from(this.props.cart);
-        let mappedCart = cart.map( (products, i) => {
+        let mappedCart = cart.map( (product, i) => {
             return (
                 <CartItem 
-                    image={products.img} 
-                    name={products.name} 
-                    price={products.price}
-                    id={products.id}
+                    image={product.img} 
+                    name={product.name} 
+                    price={product.price}
+                    id={product.id}
                     key={i}
+                    amount={product.amount}
                     delete={this.deleteItem}
-                    />
+                />
             );
         });
         let total = this.props.cart.reduce((a,b) => a + (b.price * b.amount), 0)

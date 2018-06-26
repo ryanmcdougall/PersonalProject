@@ -7,7 +7,6 @@ const initialState = {
 const UPDATE_CART_DATA = "UPDATE_CART_DATA"
 const DELETE_ITEM_CART = "DELETE_ITEM_CART"
 
-
 export default function reducer(state = initialState, action){
     let { payload } = action;
     switch(action.type){
@@ -28,8 +27,11 @@ export function actionCartChange(items){
 }
 
 export function actionDeleteCart(newCart){
+    console.log("fired")
     return{
         type: DELETE_ITEM_CART,
         payload: newCart
     }
 }
+
+

@@ -47,6 +47,7 @@ module.exports = {
         const db = req.app.get("db");
         console.log(+req.params.id, req.body.amount, +req.user.id)
         db.edit_amount([ req.body.amount, +req.params.id, req.user.id ]).then( update => {
+            console.log( update )
             res.status(200).send( update )
         })
     },
