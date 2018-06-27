@@ -26,12 +26,6 @@ export function actionCartChange(items){
     }
 }
 
-export function actionDeleteCart(newCart){
-    console.log("fired")
-    return{
-        type: DELETE_ITEM_CART,
-        payload: newCart
-    }
-}
+
 
 

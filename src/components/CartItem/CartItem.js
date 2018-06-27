@@ -12,16 +12,23 @@ class CartItem extends Component {
             amount: 1
         }
         this.adjustQuantity = this.adjustQuantity.bind(this)
+        this.deleteItem = this.deleteItem.bind( this )
+
     }
     componentDidMount(){
         this.setState({amount: this.props.amount});
-
     }
 
     adjustQuantity(e){
         this.setState({amount: +e.target.value})
-        axios.put(`/product/cart/${this.props.id}`, {amount: this.state.amount}).then( res => {
-            this.props.actionCartChange( res.data )
+        axios.put(`/product/cart/${this.props.id}`, {amount: +this.state.amount + 1}).then( res => {
+            this.props.actionCartChange( res.data );
+        })
+    }
+
+    deleteItem(id){
+        axios.delete(`/product/cart/${id}`).then( res => {
+            this.props.actionCartChange(res.data)
         })
     }
 
@@ -37,7 +44,7 @@ class CartItem extends Component {
                     value={this.state.amount} 
                     onChange={(e) => this.adjustQuantity(e)}/>
                 <button onClick={() => {
-                        this.props.delete(this.props.id)
+                        this.deleteItem(this.props.id)
                     }
                 }>X</button>
                 </div>
@@ -52,4 +59,4 @@ function mapStateToProps(state){
 }
 
 
-export default connect(mapStateToProps, { actionCartChange })(CartItem)
+export default connect(mapStateToProps, { actionCartChange, })(CartItem)

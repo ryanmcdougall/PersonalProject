@@ -4,25 +4,13 @@ import axios from 'axios'
 import StripeCheckout from 'react-stripe-checkout';
 import CartItem from '../CartItem/CartItem'
 import {actionCartChange} from '../../ducks/reducer'
-import {actionDeleteCart} from '../../ducks/reducer'
 import './Cart.css'
 
 
 class Cart extends Component {
-    constructor(){
-        super();
-
-        this.deleteItem = this.deleteItem.bind( this )
-    }
 componentDidMount(){
     axios.get('/product/userCart').then( res => {
         this.props.actionCartChange(res.data)
-    })
-}
-
-deleteItem(id){
-    axios.delete(`/product/cart/${id}`).then( res => {
-        this.props.actionDeleteCart(res.data)
     })
 }
 
@@ -50,7 +38,6 @@ onToken = (token) => {
                     id={product.id}
                     key={i}
                     amount={product.amount}
-                    delete={this.deleteItem}
                 />
             );
         });
@@ -75,4 +62,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, {actionCartChange, actionDeleteCart})(Cart)
+export default connect(mapStateToProps, {actionCartChange})(Cart)
