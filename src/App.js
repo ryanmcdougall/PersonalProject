@@ -11,9 +11,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="NavBar">
+        <div className="NavBar">
           <NavBar />
-        </header>
+        </div>
           <HashRouter>
             <Switch>
               <Route component={Home} path='/' exact />

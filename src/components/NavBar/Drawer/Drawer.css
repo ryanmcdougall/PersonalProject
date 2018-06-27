@@ -1,0 +1,19 @@
+.drawer{
+    position: absolute;
+    z-index: 1;
+    color:var(--mainColor);
+    background: var(--secondaryColor);
+    height: 100vh;
+    left: 0px;
+    transition: .3s;
+    transition-timing-function: ease-in
+}
+.hidden{
+    left: -175px;
+}
+.drawerContent{
+    padding: 20px;
+}
+.drawerContent div{
+    padding-top:40px;
+}

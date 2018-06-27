@@ -1,0 +1,20 @@
+.dropDown{
+    position: absolute;
+    color:var(--mainColor);
+    background: var(--secondaryColor);
+    height: 50vh;
+    width: 100vw;
+    top: 35px;
+    transition: .3s;
+    transition-timing-function: ease-in;
+    z-index: 0;
+}
+.hiddenDD{
+    top: -500px;
+}
+.dropDownContent{
+    padding: 20px;
+}
+.dropDownContent div{
+    padding-top:40px;
+}

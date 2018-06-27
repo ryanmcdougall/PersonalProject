@@ -36,6 +36,7 @@ class CartItem extends Component {
         console.log("amount:", this.state.amount)
         return(
             <div key={this.props.i}>
+            <br/>
                 <img src={this.props.image} alt='' width='100'/>
                 <p>{this.props.name}</p>
                 <p>${this.props.price} per day</p>
