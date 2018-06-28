@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import Icon from '@material-ui/core/Icon'
 import './Item.css'
 
 export default class Item extends Component {
@@ -31,23 +32,28 @@ export default class Item extends Component {
         let mapped = this.state.products.map( products => {
             return(
                 <div key={products.id}>
+                    <br />
                     <img src={products.img} alt='' width="200" />
                     <p>{products.name}</p>
                     {console.log(this.state.products)} 
-                    <button className="button" onClick={() => this.pushToCart(products.id)}>Add item to Cart</button>
+                    <Icon style={{color: "lightgreen"}} className="button" onClick={() => this.pushToCart(products.id)}>add_shopping_cart</Icon>
+                    <br />
                 </div>
             )
         })
         return(
             <div className="Items">
                 <Link to='/Products'>
-                    <button className="button">Back to Products</button>
+                    <Icon style={{color: "white"}}className="button">keyboard_backspace
+                    </Icon>
+                <div className="datButton">Go Back</div>
                 </Link>
-                <p>List of: {this.props.match.params.item} </p>
                 {mapped}
                 <br />
-                <Link to='/Products'>
-                <button className="button">Back to Products</button>
+                <Link to='/Cart'>
+                <div className="datButton">View your</div>
+                <Icon style={{color: "white"}}className="button">shopping_cart
+                    </Icon>
                 </Link>
             </div>
         )

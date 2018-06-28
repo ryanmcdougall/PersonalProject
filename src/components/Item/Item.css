@@ -1,5 +1,10 @@
 .Items {
+    padding-top: 65px;
     background-color: #333F60;
+    color: white
+}
+
+.datButton {
     color: white
 }
 

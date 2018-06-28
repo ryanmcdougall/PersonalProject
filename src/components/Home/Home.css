@@ -1,5 +1,6 @@
 .homePic {
     position: relative;
+    padding-top: 60px;
     z-index: 0;
     width: 100vw;
 }
