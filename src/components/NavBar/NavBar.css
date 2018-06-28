@@ -1,14 +1,16 @@
 .header {
-    position: relative;
-    padding-left: 10vw;
-    padding-right: 10vw;
+    position: fixed;
+    /* /* padding-left: 10vw; */
+    padding-right: 10vw; 
     z-index: 5;
     background: linear-gradient(to left, #fff, rgb(196, 196, 196));
     height: 60px;
+    width: 100vw;
     justify-content: space-around;
     align-items: center;
     color: var(--mainColor)
 }
+
 
 .LineItem{
     padding: 10px;

@@ -4,7 +4,8 @@ import NavBar from './components/NavBar/NavBar'
 import Home from './components/Home/Home'
 import Products from './components/Products/Products'
 import Item from './components/Item/Item';
-import Cart from './components/Cart/Cart'
+import Cart from './components/Cart/Cart';
+import Footer from './components/Footer/Footer'
 import './App.css';
 
 class App extends Component {
@@ -22,6 +23,9 @@ class App extends Component {
               <Route component={Cart} path='/Cart' />
             </Switch>
           </HashRouter>
+          <footer>
+            <Footer />
+          </footer>
       </div>
     );
   }

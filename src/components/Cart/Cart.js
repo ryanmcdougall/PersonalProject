@@ -14,16 +14,6 @@ componentDidMount(){
     })
 }
 
-// onToken = (token) => {
-//     fetch('/save-stripe-token', {
-//       method: 'POST',
-//       body: JSON.stringify(token),
-//     }).then(response => {
-//       response.json().then(data => {
-//         alert(`We are in business, ${data.email}`);
-//       });
-//     });
-//   }
 
 onToken = (token, amount) => {
     token.card = void 0;
