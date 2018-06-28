@@ -42,7 +42,7 @@ export default class NavBar extends Component {
                 <a href={process.env.REACT_APP_LOGIN}>
                         <li className="LineItem">Login</li>
                     </a>                
-                <a href="http://localhost:3005/auth/logout">
+                <a href={process.env.REACT_APP_LOGOUT}>
                         <li className="LineItem">Log Out</li>
                     </a>              
                 </section>

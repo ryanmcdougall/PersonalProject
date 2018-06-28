@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Icon from '@material-ui/core/Icon'
 import { connect } from 'react-redux'
 import { actionCartChange } from '../../ducks/reducer'
 
@@ -44,10 +45,12 @@ class CartItem extends Component {
                     type="number" 
                     value={this.state.amount} 
                     onChange={(e) => this.adjustQuantity(e)}/>
-                <button onClick={() => {
+                <Icon onClick={() => {
                         this.deleteItem(this.props.id)
                     }
-                }>X</button>
+                } 
+                    style={{color: "red", fontSize: ""}}
+                >delete_forever</Icon>
                 </div>
         )
     }
