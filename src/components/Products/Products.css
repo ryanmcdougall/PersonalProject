@@ -1,8 +1,47 @@
 .products {
-    padding-top: 55px;
+    padding-top: 65px;
     background-color: #333F60
 }
 
-.datTextBox {
-    display: flex
+.productsTextBox {
+    display: flex;
+    border: solid white 4px;
+}
+
+.Button{
+    color: white;
+}
+
+.tag{
+    color:white;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.Pumps {
+    border: solid white 2px;
+    padding:10px
+}
+
+.Attachments {
+    border: solid white 2px;
+    padding: 5px;
+}
+
+.Hose{
+    border: solid white 2px;
+    padding: 10px;
+}
+
+.theBar {
+    size: 10px;
+}
+
+.picture{
+    width: 75vw;
+    border: solid #BCBCBC 4px;
+    margin: 10px;
 }

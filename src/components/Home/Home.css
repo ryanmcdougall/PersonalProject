@@ -1,3 +1,14 @@
+.Home {
+    background-color:  #333F60;
+}
+
+.homeContent{
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 10px;
+}
+
 .imageTextBox {
     position: relative;
     text-emphasis: center;
@@ -17,6 +28,27 @@
     position: relative;
     padding-top: 60px;
     z-index: 0;
-    width: 100vw;
+    /* max-width: 1000px; */
+    width: 100%;
     height: auto;
+}
+
+.pipeImg {
+    border: solid #BCBCBC 2px;
+    position: relative;
+    width: 20;
+    max-height: 400px;
+    height: 100px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+    padding: 35px;
+    border: solid  #BCBCBC 3px;
+}
+
+.firstText {
+    font-size: 12px;
+    padding: 5px;
 }
