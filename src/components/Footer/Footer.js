@@ -4,8 +4,8 @@ import "./Footer.css"
 export default class Footer extends Component {
     render(){
         return(
-            <div>
-                Footer
+            <div className="footerTextBox">
+                Copyright Ryan McDougall... and a lot of peer/mentor help
             </div>
         )
     }

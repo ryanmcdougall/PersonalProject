@@ -1,12 +1,19 @@
 import React, { Component } from 'react'
+import mtshasta from './mtshasta.jpg'
 import "./Home.css"
+
 
 export default class Home extends Component{
     render(){
         return(
             <div>
-                <div >
-                    <img className="homePic" src="https://hikemtshasta.files.wordpress.com/2016/01/cascades-mt-shasta-jan2016-329-custom.jpg" alt="" />
+                <div className="imageTextBox">
+                    <img className="homePic" src={mtshasta} alt=""/>
+                    <div className="textBox" style={{fontSize: 10}}>
+                        <h1 className="headingBox">MPS. Services for you.</h1>
+                        <p>some quote in the future</p>
+                        <div className="block"></div>
+                    </div>
                 </div>
             </div>
         )

@@ -1,6 +1,22 @@
+.imageTextBox {
+    position: relative;
+    text-emphasis: center;
+    color: #BCBCBC
+}
+
+.textBox {
+    /* background-color: #1F1C1D; */
+    width: 60vw;
+    border: solid #BCBCBC 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 .homePic {
     position: relative;
     padding-top: 60px;
     z-index: 0;
     width: 100vw;
+    height: auto;
 }
