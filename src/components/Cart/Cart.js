@@ -19,7 +19,7 @@ onToken = (token, amount) => {
     token.card = void 0;
     console.log('token', token);
     console.log('token', amount);
-    axios.post('http://localhost:3000/api/payment', { token, amount: amount + ".00"} ).then(response => {
+    axios.post('https://mpsdemo.com/api/payment', { token, amount: amount + ".00"} ).then(response => {
         alert('we are in business')
     });
 }
