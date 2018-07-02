@@ -14,7 +14,7 @@ export default class Home extends Component{
                     <img className="homePic" src={mtshasta} alt=""/>
                     <div className="textBox" style={{fontSize: 15}}>
                          <h1 className="headingBox">Services for you.</h1>
-                        <p>The road to success is always under construction.</p>
+                        <p>"The road to success is always under construction."</p>
                         <div className="block"></div>
                     </div>
                 </div>

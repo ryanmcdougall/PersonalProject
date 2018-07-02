@@ -8,7 +8,11 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 0px 0px 25px 10px
+                rgba(0, 0, 0, .25)
 }
+
+
 
 .homeContent{
     position: relative;
@@ -43,30 +47,37 @@
     /* max-width: 1000px; */
     width: 100%;
     height: auto;
+    -webkit-filter: blur(5px); /* Safari */
+    filter: blur(5px);
 }
 
 .pipeImg {
-    border: solid #BCBCBC 2px;
+    border: solid #2D3755 2px;
     position: relative;
     min-width: 200px;
     max-width: 300px;
     width: 20;
     max-height: 250px;
+    box-shadow: 0px 0px 25px 10px
+                rgba(0, 0, 0, .25)
 }
 
 .pumpImg {
-    border: solid #BCBCBC 2px;
+    border: solid #2D3755 2px;
     position: relative;
-    min-width: 150px;
-    width: 20;
+    min-width: 120px;
+    width: 220px;
     max-height: 240px;
     min-height: 200px;
+    box-shadow: 0px 0px 25px 10px
+                rgba(0, 0, 0, .25)
 }
 
 .details {
-    display: flex;
+    background-color: #343D64;
+    display: inline-flex;
     justify-content: space-around;
-    max-width: 350px;;
+    max-width: 300px;;
     padding: 35px;
     border: solid  #BCBCBC 3px;
     display: block;
@@ -75,9 +86,10 @@
 }
 
 .details2 {
-    display: flex;
+    background-color: #343D64;
+    display: inline-flex;
     justify-content: space-around;
-    max-width: 350px;
+    max-width: 300px;
     padding: 35px;
     border: solid  #BCBCBC 3px;
     display: block;
@@ -95,10 +107,27 @@
 }
 
 .productsButton{
+    background-color: #BCBCBC;
+    display: block;
+    margin: auto;
+    width: 100px;
+    border: solid #BCBCBC 2px;
     color: white;
 }
 
 .loginButton {
+    background-color: #BCBCBC;
+    display: block;
+    margin: auto;
+    width: 100px;
+    border: solid #BCBCBC 2px;
     color: white;
 }
 
+.loginButton:hover{
+    transform: scale(1.1)
+}
+
+.productsButton:hover{
+    transform: scale(1.1)
+}

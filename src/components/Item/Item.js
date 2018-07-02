@@ -33,7 +33,7 @@ export default class Item extends Component {
             return(
                 <div key={products.id}>
                     <br />
-                    <img src={products.img} alt='' width="200" />
+                    <img className="productImg" src={products.img} alt='' width="200" />
                     <p>{products.name}</p>
                     {console.log(this.state.products)} 
                     <Icon style={{color: "lightgreen"}} className="button" onClick={() => this.pushToCart(products.id)}>add_shopping_cart</Icon>

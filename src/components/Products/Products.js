@@ -15,19 +15,19 @@ export default class Products extends Component{
                 <div className="content">
                     <Link to='/Item/pumps'>
                     <div className="Pumps">
-                    <Icon style={{color: "Black", fontSize: "40px"}}>rv_hookup</Icon>
+                    <Icon className="cartButton" style={{color: "Black", fontSize: "40px"}}>rv_hookup</Icon>
                     <p className="tag">Pumps</p>
                     </div>
                     </Link>
                     <Link to='Item/attachments'>
                     <div className="Attachments">
-                    <Icon style={{color: "black", fontSize: '40px'}}>merge_type</Icon>
+                    <Icon className="cartButton"style={{color: "black", fontSize: '40px'}}>merge_type</Icon>
                     <p className="tag">Attachments</p>
                     </div>
                     </Link>
                     <Link to='/Item/hose'>
                     <div className="Hose">
-                    <Icon style={{color: "black", fontSize: "40px"}}>all_inclusive</Icon>
+                    <Icon className="cartButton"style={{color: "black", fontSize: "40px"}}>all_inclusive</Icon>
                     <p className="tag">Hose</p>
                     </div>
                     </Link>
@@ -35,13 +35,14 @@ export default class Products extends Component{
                     <br />
                     <hr />
                     <div className="TextBox">
-                        Create a system that is right for you. Choose from these 3 categories shown above to build a system that fits your specific need.
+                        Create a system that is right for YOU. <br /><br />
+                        Choose from these 3 categories (as shown above) to build a system that fits your specific need.
                     </div>
                     <br />
                     <br />
                     <Link to='/Cart'>
                 <div className="Button">View your</div>
-                <Icon style={{color: "white"}}className="button">shopping_cart
+                <Icon style={{color: "white"}} className="button">shopping_cart
                     </Icon>
                 </Link>
                 <hr className="theBar"/>

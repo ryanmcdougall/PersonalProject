@@ -47,12 +47,14 @@ render(){
                 <br />
                 {mappedCart}
                 <br />
-                ${total}
+                <p>Your total is ${total}</p>
                 <br />
                 <StripeCheckout
                     token= {(t) => this.onToken(t, total)}
                     stripeKey="pk_test_3kGNKrGeKdxONcZOh7BJLhE0" 
                     amount={+(total + "00")}/>
+                    <br />
+                    <br />
             </div>
         )
     }
