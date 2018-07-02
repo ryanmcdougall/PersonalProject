@@ -19,7 +19,7 @@
     flex-direction: column;
     justify-content: center;
     margin: 10px;
-    display: block;
+    display: flex;
     margin-left: auto;
     margin-right: auto;
 }
@@ -54,10 +54,10 @@
 .pipeImg {
     border: solid #2D3755 2px;
     position: relative;
-    min-width: 200px;
+    min-width: 220px;
     max-width: 300px;
     width: 20;
-    max-height: 250px;
+    max-height: 200px;
     box-shadow: 0px 0px 25px 10px
                 rgba(0, 0, 0, .25)
 }
@@ -75,19 +75,18 @@
 
 .details {
     background-color: #343D64;
-    display: inline-flex;
+    display: flex;
     justify-content: space-around;
     max-width: 300px;;
     padding: 35px;
     border: solid  #BCBCBC 3px;
     display: block;
     margin: auto;
-    
 }
 
 .details2 {
     background-color: #343D64;
-    display: inline-flex;
+    display: flex;
     justify-content: space-around;
     max-width: 300px;
     padding: 35px;
@@ -130,4 +129,10 @@
 
 .productsButton:hover{
     transform: scale(1.1)
+}
+
+@media(min-width: 730px) {
+    .homeContent{
+        flex-direction: row;
+    }
 }
