@@ -28,7 +28,9 @@ export default class NavBar extends Component {
                 <div className={this.state.drawerToggle ? 'bar bar2' : 'bar'}></div>
                 <div className={this.state.drawerToggle ? 'bar bar3' : 'bar'}></div>
               </div>
+              <Link to='/'>
               <img className="Logo" src={logo} alt="" />
+              </Link>
               <section className="List">
                 <Link to='/'>
                         <li className="LineItem">Home</li>
