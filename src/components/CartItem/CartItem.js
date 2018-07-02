@@ -3,6 +3,7 @@ import axios from 'axios'
 import Icon from '@material-ui/core/Icon'
 import { connect } from 'react-redux'
 import { actionCartChange } from '../../ducks/reducer'
+import "./CartItem.css"
 
 
 class CartItem extends Component {
@@ -38,14 +39,15 @@ class CartItem extends Component {
         return(
             <div key={this.props.i}>
             <br/>
-                <img src={this.props.image} alt='' width='100'/>
+                <img className="cartImg" src={this.props.image} alt='' width='100'/>
                 <p>{this.props.name}</p>
                 <p>${this.props.price} per day</p>
                 <input 
+                    style={{maxWidth: 35}}
                     type="number" 
                     value={this.state.amount} 
                     onChange={(e) => this.adjustQuantity(e)}/>
-                <Icon onClick={() => {
+                <Icon className="deleteButton" onClick={() => {
                         this.deleteItem(this.props.id)
                     }
                 } 

@@ -3,6 +3,7 @@
     justify-content: center;
     text-align: center;
     align-items: center;
+    min-height: 100vh;
     background-color:  #2D3755;
     max-width: 1000px;
     display: block;
