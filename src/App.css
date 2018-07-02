@@ -14,7 +14,7 @@
   --white : #fff;
   background: var(--mainColor);
   background-color: #F6F5F1;
-  height: fit-content
+  height: 100%;
 }
 div{
   font-weight: 800;

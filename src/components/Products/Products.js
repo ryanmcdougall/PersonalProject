@@ -35,7 +35,7 @@ export default class Products extends Component{
                     <br />
                     <hr />
                     <div className="TextBox">
-                        Create a system that is right for YOU. <br /><br />
+                        Create a system that is right for you. <br /><br />
                         Choose from these 3 categories (as shown above) to build a system that fits your specific need.
                     </div>
                     <br />

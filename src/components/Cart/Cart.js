@@ -54,6 +54,7 @@ render(){
                     stripeKey="pk_test_3kGNKrGeKdxONcZOh7BJLhE0" 
                     amount={+(total + "00")}/>
                     <br />
+                    <div className="background"></div>
                     <br />
             </div>
         )
