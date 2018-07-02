@@ -1,12 +1,23 @@
 .Home {
-    background-color:  #333F60;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color:  #2D3755;
+    max-width: 1000px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .homeContent{
-    position: absolute;
+    position: relative;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     margin: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .imageTextBox {
@@ -18,6 +29,7 @@
 .textBox {
     /* background-color: #1F1C1D; */
     width: 60vw;
+    max-width: 600px;
     border: solid #BCBCBC 3px;
     position: absolute;
     top: 50%;
@@ -36,19 +48,57 @@
 .pipeImg {
     border: solid #BCBCBC 2px;
     position: relative;
+    min-width: 200px;
+    max-width: 300px;
     width: 20;
-    max-height: 400px;
-    height: 100px;
+    max-height: 250px;
+}
+
+.pumpImg {
+    border: solid #BCBCBC 2px;
+    position: relative;
+    min-width: 150px;
+    width: 20;
+    max-height: 240px;
+    min-height: 200px;
 }
 
 .details {
     display: flex;
     justify-content: space-around;
+    max-width: 350px;;
     padding: 35px;
     border: solid  #BCBCBC 3px;
+    display: block;
+    margin: auto;
+    
+}
+
+.details2 {
+    display: flex;
+    justify-content: space-around;
+    max-width: 350px;
+    padding: 35px;
+    border: solid  #BCBCBC 3px;
+    display: block;
+    margin: auto;
 }
 
 .firstText {
     font-size: 12px;
     padding: 5px;
 }
+
+.space{
+    clear: both;
+    color: #2D3755
+}
+
+.productsButton{
+    color: white;
+}
+
+.loginButton {
+    color: white;
+}
+

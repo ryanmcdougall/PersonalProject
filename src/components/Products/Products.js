@@ -13,24 +13,24 @@ export default class Products extends Component{
                   <br />
                   <br />
                 <div className="content">
-                    <div className="Pumps">
                     <Link to='/Item/pumps'>
-                    <Icon style={{color: "white", fontSize: "40px"}}>rv_hookup</Icon>
+                    <div className="Pumps">
+                    <Icon style={{color: "Black", fontSize: "40px"}}>rv_hookup</Icon>
                     <p className="tag">Pumps</p>
-                    </Link>
                     </div>
-                    <div className="Attachments">
+                    </Link>
                     <Link to='Item/attachments'>
-                    <Icon style={{color: "white", fontSize: '40px'}}>merge_type</Icon>
+                    <div className="Attachments">
+                    <Icon style={{color: "black", fontSize: '40px'}}>merge_type</Icon>
                     <p className="tag">Attachments</p>
-                    </Link>
                     </div>
-                    <div className="Hose">
+                    </Link>
                     <Link to='/Item/hose'>
-                    <Icon style={{color: "white", fontSize: "40px"}}>all_inclusive</Icon>
+                    <div className="Hose">
+                    <Icon style={{color: "black", fontSize: "40px"}}>all_inclusive</Icon>
                     <p className="tag">Hose</p>
-                    </Link>
                     </div>
+                    </Link>
                     </div>
                     <br />
                     <hr />

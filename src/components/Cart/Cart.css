@@ -1,5 +1,9 @@
 .Cart {
+    max-width: 1000px;
     position: relative;
     background: #333F60;
     padding-top: 42px;
+    display: block;
+    margin: auto;
+    height: 100vh
 }

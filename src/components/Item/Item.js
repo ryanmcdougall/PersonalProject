@@ -46,12 +46,12 @@ export default class Item extends Component {
                 <Link to='/Products'>
                     <Icon style={{color: "white"}}className="button">keyboard_backspace
                     </Icon>
-                <div className="datButton">Go Back</div>
+                <div className="backButton">Go Back</div>
                 </Link>
                 {mapped}
                 <br />
                 <Link to='/Cart'>
-                <div className="datButton">View your</div>
+                <div className="backButton" style={{color: "white"}}>View your</div>
                 <Icon style={{color: "white"}}className="button">shopping_cart
                     </Icon>
                 </Link>

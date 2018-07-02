@@ -13,7 +13,8 @@
   --black : #333;
   --white : #fff;
   background: var(--mainColor);
-  height:100vh;
+  background-color: #F6F5F1;
+  height: fit-content
 }
 div{
   font-weight: 800;
