@@ -5,6 +5,7 @@ const initialState = {
 }
 
 const UPDATE_CART_DATA = "UPDATE_CART_DATA"
+const DELETE_ITEM_CART = "DELETE_ITEM_CART"
 
 export default function reducer(state = initialState, action){
     let { payload } = action;
