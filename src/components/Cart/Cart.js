@@ -20,7 +20,7 @@ onToken = (token, amount) => {
     console.log('token', token);
     console.log('token', amount);
     axios.post('https://mpsdemo.com/api/payment', { token, amount: amount + ".00"} ).then(response => {
-        alert('we are in business')
+        alert('We are in business!')
     });
 }
 
