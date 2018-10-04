@@ -14,6 +14,12 @@ componentDidMount(){
     })
 }
 
+clearCart(){
+    axios.delete('/product/cart').then( res => {
+        this.props.actionCartChange( res.data )
+    })
+}
+
 
 onToken = (token, amount) => {
     token.card = void 0;
@@ -52,6 +58,7 @@ render(){
                 <StripeCheckout
                     token= {(t) => this.onToken(t, total)}
                     stripeKey="pk_test_3kGNKrGeKdxONcZOh7BJLhE0" 
+                    onClick={() => this.clearCart()}
                     amount={+(total + "00")}/>
                     <br />
                     <br />

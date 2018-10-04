@@ -17,7 +17,7 @@
 }
 
 .LineItem:hover{
-    background: var(--secondaryColor)
+    text-decoration: underline #343D64
 }
 
 .Logo {

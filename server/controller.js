@@ -56,5 +56,11 @@ module.exports = {
         db.delete_from_cart([+req.params.id, req.user.id]).then( updatedCart => {
             res.status(200).send(updatedCart)
         })
+    },
+    clearCart: ( req, res ) => {
+        const db = req.app.get('db');
+        db.delete_cart(req.user.id).then( cart => {
+            res.status(200).send( cart )
+        })
     }
 } 

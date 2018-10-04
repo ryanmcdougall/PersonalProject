@@ -57,7 +57,6 @@ passport.use(
                 }
             });
         }
-
     )
 );
 
@@ -123,7 +122,7 @@ app.post('/api/payment', function(req, res, next){
       return res.sendStatus(200);
     // if (err && err.type === 'StripeCardError') {
     //   // The card has been declined
-    // }
+    // }// testing
   });
   });
 
@@ -131,11 +130,14 @@ app.get('/product/pumps', ctrl.showPumps)
 app.get('/product/hose', ctrl.showHose)
 app.get('/product/attachments', ctrl.showAttachments)
 app.get('/product/cart', ctrl.getCartItems)
+
 app.get('/product/userCart', ctrl.getUserCart)
+
 app.get('/product/prices', ctrl.getPrices)
 app.post('/product/cart', ctrl.postToCart)
 app.put('/product/cart/:id', ctrl.editAmount)
 app.delete('/product/cart/:id', ctrl.deleteFromCart)
+app.delete('/product/cart', ctrl.clearCart)
 
 app.listen(SERVER_PORT, () => { 
     console.log(`Listening on port: `, SERVER_PORT);
